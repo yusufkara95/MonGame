@@ -10,7 +10,7 @@ Monster::Monster(std::string name, std::string gender, std::string category, int
 
 Monster::~Monster()
 {
-    std::cout << "Monster is destroyed!" << std::endl;
+    std::cout << "Monster " << getName() << " is destroyed!" << std::endl;
 }
 
 void Monster::printMonster()

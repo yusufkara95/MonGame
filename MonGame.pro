@@ -5,11 +5,19 @@ CONFIG -= qt
 
 SOURCES += \
         enemymonster.cpp \
+        item.cpp \
         main.cpp \
+        market.cpp \
         monster.cpp \
-        mymonster.cpp
+        mymonster.cpp \
+        myteam.cpp \
+        player.cpp
 
 HEADERS += \
     enemymonster.h \
+    item.h \
+    market.h \
     monster.h \
-    mymonster.h
+    mymonster.h \
+    myteam.h \
+    player.h
