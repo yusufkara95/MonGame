@@ -10,6 +10,15 @@ public:
 
     void printItem();
 
+    std::string getName() const;
+    void setName(const std::string &newName);
+
+    int getValue() const;
+    void setValue(int newValue);
+
+    int getSaleValue() const;
+    void setSaleValue(int newSaleValue);
+
 private:
     std::string m_name;
     int m_value;

@@ -30,10 +30,21 @@ int main()
 
     std::cout << "---------------" << std::endl;
 
+
+
 }
 
 /*TODO:
  * + Alle in eine Liste packen und Speicher freigeben
  * + Smart pointer einbauen
+ *
+ *
+ *
+ *
+ *
+ * Monstermarkt:
+ * - Bestand
+ *
+ * + Prüfen, ob man auf die Daten-Member von Item zugreifen kann, da diese private sind.
 */
 
