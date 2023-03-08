@@ -7,13 +7,6 @@ EnemyMonster::EnemyMonster(std::string name, std::string gender, std::string cat
     color = m_color;
 }
 
-
-void EnemyMonster::printMonster()
-{
-    std::cout << "Pokemon: " << getName() << ", Gender: (" << getGender() << "), Category: " << getCategory() << std::endl;
-    std::cout << "-> ANG: " << getAttackValue() << ", DEF: " << getDefenseValue() << ", INIT: " << getInitValue() << std::endl;
-}
-
 std::string EnemyMonster::getColor() const
 {
     return m_color;

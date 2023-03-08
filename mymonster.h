@@ -8,8 +8,6 @@ class MyMonster : public Monster
 public:
     MyMonster(std::string name, std::string gender, std::string category, int attackValue, int defenseValue, int initValue, std::string color);
 
-    void printMonster();
-
     std::string getColor() const;
     void setColor(const std::string &newColor);
 

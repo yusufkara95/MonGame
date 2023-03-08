@@ -2,11 +2,18 @@
 
 #include "mymonster.h"
 #include "myteam.h"
+#include "player.h"
 
 using namespace std;
 
 int main()
 {
+
+    Player* player = new Player("Yuga", "m", 100);
+
+    player->printPlayer();
+
+    std::cout << "---------------" << std::endl;
 
     MyMonster* wassiris = new MyMonster("Wassiris", "m", "Wasser", 8, 16, 4, "blau");
     MyMonster* flanzoros = new MyMonster("Flanzoros", "m", "Pflanze", 8, 16, 4, "gruen");
