@@ -3,6 +3,8 @@
 #include "mymonster.h"
 #include "myteam.h"
 #include "player.h"
+#include "item.h"
+#include "market.h"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ int main()
 
     Player* player = new Player("Yuga", "m", 100);
 
-    player->printPlayer();
+
 
     std::cout << "---------------" << std::endl;
 
@@ -21,11 +23,23 @@ int main()
 
     MyTeam* myTeam = new MyTeam();
 
+    Market* market = new Market("MonMarket");
+    Item* potion = new Item("Trank", 20, 50);
+
+    market->addItem(potion);
+
+    market->printMarket();
+
     std::cout << "---------------" << std::endl;
 
     myTeam->addMonster(*wassiris);
     myTeam->addMonster(*flanzoros);
     myTeam->addMonster(*feuerpol);
+
+    std::cout << "---------------" << std::endl;
+    player->printPlayer();
+    std::cout << "---------------" << std::endl;
+
 
     std::cout << "---------------" << std::endl;
 

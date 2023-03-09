@@ -8,12 +8,20 @@
 class Market
 {
 public:
-    Market();
+    Market(std::string name);
 
-    void addItem();
+    void addItem(Item* item);
+    void printMarket();
+
+    std::string getName() const;
+    void setName(const std::string &newName);
+
+    std::vector<Item> getMarketItems() const;
+    void setMarketItems(const std::vector<Item> &newMarketItems);
 
 private:
     std::vector<Item> marketItems;
+    std::string m_name;
 
 };
 
