@@ -3,27 +3,24 @@
 
 #include <iostream>
 
-MyTeam::MyTeam()
-{
-
-}
+MyTeam::MyTeam() {}
 
 void MyTeam::addMonster(MyMonster &m)
 {
-    myTeamList.push_back(m);
+    m_myTeamList.push_back(m);
     std::cout << "Ein Monster (" << m.getName() << ") wurde zu deinem Team hinzugefuegt." << std::endl;
 }
 
 void MyTeam::deleteMonster(MyMonster m)
 {
-    std::vector<MyMonster>::iterator iter = myTeamList.begin();
-    std::vector<MyMonster>::iterator endIter = myTeamList.end();
+    std::vector<MyMonster>::iterator iter = m_myTeamList.begin();
+    std::vector<MyMonster>::iterator endIter = m_myTeamList.end();
 
     for(;iter != endIter; ++iter)
     {
         if(iter->getName() == m.getName())
         {
-            myTeamList.erase(iter);
+            m_myTeamList.erase(iter);
         }
     }
 
@@ -33,10 +30,20 @@ void MyTeam::deleteMonster(MyMonster m)
 void MyTeam::printMyTeam()
 {
     std::cout << "Mein Team:" << std::endl;
-    for ( auto & val: myTeamList)
+    for ( auto & val: m_myTeamList)
     {
         std::cout<<val.getName()<<"\n";
     }
+}
+
+std::vector<MyMonster> MyTeam::getMyTeamList() const
+{
+    return m_myTeamList;
+}
+
+void MyTeam::setMyTeamList(const std::vector<MyMonster> &newMyTeamList)
+{
+    m_myTeamList = newMyTeamList;
 }
 
 std::ostream& operator <<( std::ostream& out, const MyMonster& myT) {

@@ -16,8 +16,11 @@ public:
 
     friend std::ostream& operator <<( std::ostream& out, const MyTeam& myT);
 
+    std::vector<MyMonster> getMyTeamList() const;
+    void setMyTeamList(const std::vector<MyMonster> &newMyTeamList);
+
 private:
-    std::vector<MyMonster> myTeamList;
+    std::vector<MyMonster> m_myTeamList;
 };
 
 #endif // MYTEAM_H

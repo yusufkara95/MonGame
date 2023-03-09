@@ -5,15 +5,12 @@
 #include "player.h"
 #include "item.h"
 #include "market.h"
+#include "inventory.h"
 
 using namespace std;
 
 int main()
 {
-
-    Player* player = new Player("Yuga", "m", 100);
-
-
 
     std::cout << "---------------" << std::endl;
 
@@ -21,37 +18,44 @@ int main()
     MyMonster* flanzoros = new MyMonster("Flanzoros", "m", "Pflanze", 8, 16, 4, "gruen");
     MyMonster* feuerpol = new MyMonster("Feuerpol", "m", "Feuer", 8, 16, 4, "rot");
 
-    MyTeam* myTeam = new MyTeam();
+    MyTeam* playerTeam = new MyTeam();
+    Inventory* playerInventory = new Inventory();
 
     Market* market = new Market("MonMarket");
     Item* potion = new Item("Trank", 20, 50);
+    Item* monball = new Item("Monball", 0, 25);
+
+    Player* player = new Player("Yuga", "m", 100, *playerInventory, *playerTeam);
+
 
     market->addItem(potion);
+    market->addItem(monball);
 
     market->printMarket();
 
     std::cout << "---------------" << std::endl;
 
-    myTeam->addMonster(*wassiris);
-    myTeam->addMonster(*flanzoros);
-    myTeam->addMonster(*feuerpol);
-
-    std::cout << "---------------" << std::endl;
-    player->printPlayer();
-    std::cout << "---------------" << std::endl;
-
+    playerTeam->addMonster(*wassiris);
+    playerTeam->addMonster(*flanzoros);
+    playerTeam->addMonster(*feuerpol);
 
     std::cout << "---------------" << std::endl;
 
-    myTeam->deleteMonster(*flanzoros);
+    //player->printPlayer();
 
     std::cout << "---------------" << std::endl;
 
-    myTeam->printMyTeam();
+    playerTeam->deleteMonster(*feuerpol);
+    playerTeam->deleteMonster(*flanzoros);
 
     std::cout << "---------------" << std::endl;
 
+    player->renameMonster(*wassiris, "Waterpol");
 
+    playerTeam->printMyTeam();
+
+
+    std::cout << "---------------" << std::endl;
 
 }
 

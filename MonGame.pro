@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         enemymonster.cpp \
+        inventory.cpp \
         item.cpp \
         main.cpp \
         market.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
 
 HEADERS += \
     enemymonster.h \
+    inventory.h \
     item.h \
     market.h \
     monster.h \
