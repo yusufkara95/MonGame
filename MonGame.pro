@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        battle.cpp \
         enemymonster.cpp \
         inventory.cpp \
         item.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
         player.cpp
 
 HEADERS += \
+    battle.h \
     enemymonster.h \
     inventory.h \
     item.h \

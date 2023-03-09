@@ -6,7 +6,7 @@
 class Monster
 {
 public:
-    Monster(std::string name, std::string gender, std::string category, int attackValue, int defenseValue, int initValue);
+    Monster(std::string name, int health, std::string category, int attackValue, int defenseValue, int initValue);
     ~Monster();
 
     void attack();
@@ -16,8 +16,8 @@ public:
     std::string getName() const;
     void setName(const std::string &newName);
 
-    std::string getGender() const;
-    void setGender(const std::string &newGender);
+    int getHealth() const;
+    void setHealth(const int &newHealth);
 
     std::string getCategory() const;
     void setCategory(const std::string &newCategory);
@@ -33,7 +33,7 @@ public:
 
 private:
     std::string m_name;
-    std::string m_gender;
+    int m_health;
     std::string m_category;
 
     int m_attackValue;

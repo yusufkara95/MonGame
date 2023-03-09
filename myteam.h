@@ -13,13 +13,14 @@ public:
     void deleteMonster(MyMonster m);
 
     void printMyTeam();
+    int printCountMonster();
 
-    friend std::ostream& operator <<( std::ostream& out, const MyTeam& myT);
+    //friend std::ostream& operator <<( std::ostream& out, const MyTeam& myT);
 
     std::vector<MyMonster> getMyTeamList() const;
     void setMyTeamList(const std::vector<MyMonster> &newMyTeamList);
 
-private:
+protected:
     std::vector<MyMonster> m_myTeamList;
 };
 

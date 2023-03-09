@@ -6,7 +6,7 @@
 class EnemyMonster : public Monster
 {
 public:
-    EnemyMonster(std::string name, std::string gender, std::string category, int attackValue, int defenseValue, int initValue, std::string color);
+    EnemyMonster(std::string name, int health, std::string category, int attackValue, int defenseValue, int initValue, std::string color);
 
     void printMonster();
 

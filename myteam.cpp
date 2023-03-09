@@ -8,7 +8,7 @@ MyTeam::MyTeam() {}
 void MyTeam::addMonster(MyMonster &m)
 {
     m_myTeamList.push_back(m);
-    std::cout << "Ein Monster (" << m.getName() << ") wurde zu deinem Team hinzugefuegt." << std::endl;
+    //std::cout << "Ein Monster (" << m.getName() << ") wurde zu deinem Team hinzugefuegt." << std::endl;
 }
 
 void MyTeam::deleteMonster(MyMonster m)
@@ -20,7 +20,7 @@ void MyTeam::deleteMonster(MyMonster m)
     {
         if(iter->getName() == m.getName())
         {
-            m_myTeamList.erase(iter);
+           m_myTeamList.erase(iter);
         }
     }
 
@@ -34,6 +34,11 @@ void MyTeam::printMyTeam()
     {
         std::cout<<val.getName()<<"\n";
     }
+}
+
+int MyTeam::printCountMonster()
+{
+    return m_myTeamList.size();
 }
 
 std::vector<MyMonster> MyTeam::getMyTeamList() const

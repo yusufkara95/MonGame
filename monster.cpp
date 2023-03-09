@@ -2,20 +2,20 @@
 
 #include <iostream>
 
-Monster::Monster(std::string name, std::string gender, std::string category, int attackValue, int defenseValue, int initValue)
-    : m_name(name), m_gender(gender), m_category(category), m_attackValue(attackValue), m_defenseValue(defenseValue), m_initValue(initValue)
+Monster::Monster(std::string name, int health, std::string category, int attackValue, int defenseValue, int initValue)
+    : m_name(name), m_health(health), m_category(category), m_attackValue(attackValue), m_defenseValue(defenseValue), m_initValue(initValue)
 {
 
 }
 
 Monster::~Monster()
 {
-    std::cout << "Monster " << getName() << " is destroyed!" << std::endl;
+    //std::cout << "Monster " << getName() << " is destroyed!" << std::endl;
 }
 
 void Monster::printMonster()
 {
-    std::cout << "Pokemon: " << getName() << ", Gender: (" << getGender() << "), Category: " << getCategory() << std::endl;
+    std::cout << "Pokemon: " << getName() << ", HP: (" << getHealth() << "), Category: " << getCategory() << std::endl;
 }
 
 std::string Monster::getName() const
@@ -28,14 +28,14 @@ void Monster::setName(const std::string &newName)
     m_name = newName;
 }
 
-std::string Monster::getGender() const
+int Monster::getHealth() const
 {
-    return m_gender;
+    return m_health;
 }
 
-void Monster::setGender(const std::string &newGender)
+void Monster::setHealth(const int &newHealth)
 {
-    m_gender = newGender;
+    m_health = newHealth;
 }
 
 std::string Monster::getCategory() const

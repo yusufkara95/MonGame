@@ -9,12 +9,13 @@
 #include "enemymonster.h"
 #include "myteam.h"
 
-class Player
+class Player : public MyTeam
 {
 public:
-    Player(std::string name, std::string m_gender, int money, Inventory inventory, MyTeam myPlayerTeam);
+    Player(std::string name, std::string m_gender, int money, MyTeam myPlayerTeam);
 
     void printPlayer();
+    void printPlayerTeam();
 
     void buyItem(Market market, Item item);
     void useItem(Inventory inventory);
@@ -32,8 +33,10 @@ public:
     int getMoney() const;
     void setMoney(int newMoney);
 
-    MyTeam getMyPlayerTeamList() const;
-    void setMyTeamList(const MyTeam &newMyTeamList);
+    friend std::ostream& operator <<( std::ostream& out, const MyMonster& myMonster);
+
+protected:
+    std::vector<MyTeam> m_myPlayerTeamList;
 
 private:
     std::string m_name;
@@ -41,8 +44,6 @@ private:
 
     int m_money;
 
-    Inventory m_inventoryList;
-    MyTeam m_playerTeamList;
 };
 
 #endif // PLAYER_H
