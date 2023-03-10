@@ -1,9 +1,9 @@
 #ifndef ENEMYMONSTER_H
 #define ENEMYMONSTER_H
 
-#include "monster.h"
+#include <string>
 
-class EnemyMonster : public Monster
+class EnemyMonster
 {
 public:
     EnemyMonster(std::string name, int health, std::string category, int attackValue, int defenseValue, int initValue, std::string color);
