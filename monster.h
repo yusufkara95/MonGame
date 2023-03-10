@@ -9,9 +9,8 @@ public:
     Monster(std::string name, int health, std::string category, int attackValue, int defenseValue, int initValue);
     ~Monster();
 
-    void attack();
+    void attack(Monster& enemyMonster);
     void printMonster();
-
 
     std::string getName() const;
     void setName(const std::string &newName);
@@ -30,6 +29,10 @@ public:
 
     int getInitValue() const;
     void setInitValue(int newInitValue);
+
+    friend std::ostream& operator <<( std::ostream& out, const Monster& m);
+
+    bool isDefeated();
 
 private:
     std::string m_name;

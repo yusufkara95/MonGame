@@ -13,9 +13,23 @@ Monster::~Monster()
     //std::cout << "Monster " << getName() << " is destroyed!" << std::endl;
 }
 
+void Monster::attack(Monster &enemyMonster)
+{
+    enemyMonster.setHealth(enemyMonster.getHealth() - this->getAttackValue());
+}
+
 void Monster::printMonster()
 {
-    std::cout << "Pokemon: " << getName() << ", HP: (" << getHealth() << "), Category: " << getCategory() << std::endl;
+    std::cout << "Monster: " << getName() << ", HP: (" << getHealth() << " HP)" << std::endl;
+}
+
+bool Monster::isDefeated()
+{
+    if(getHealth() <= 0){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 std::string Monster::getName() const
@@ -76,4 +90,9 @@ int Monster::getInitValue() const
 void Monster::setInitValue(int newInitValue)
 {
     m_initValue = newInitValue;
+}
+
+std::ostream& operator <<( std::ostream& out, const Monster& m) {
+    out << "Monster: " << m.getName() << ", " << m.getHealth() << " HP";
+    return out;
 }
