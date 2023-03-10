@@ -17,10 +17,6 @@ void Player::printPlayerTeam()
     }
 }
 
-void Player::renameMonster(MyMonster &m, std::string newName)
-{
-
-}
 
 std::string Player::getName() const
 {
