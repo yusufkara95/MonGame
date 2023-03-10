@@ -1,21 +1,18 @@
 #ifndef BATTLE_H
 #define BATTLE_H
 
-#include "mymonster.h"
-#include "enemymonster.h"
+#include "monster.h"
 
 class Battle
 {
 public:
     Battle();
 
-    void startBattle(MyMonster myMonster, EnemyMonster enemyMonster);
+    void startBattle(Monster myMonster, Monster enemyMonster);
 
-    bool getIsBattleFinished() const;
-    void setIsBattleFinished(bool newIsBattleFinished);
+    bool isMonsterDefeated();
 
 private:
-    bool isBattleFinished;
 };
 
 #endif // BATTLE_H
